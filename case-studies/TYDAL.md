@@ -46,6 +46,16 @@ And this is the **honest version** — before building it we audited our own jar
 - **Self-healing infrastructure** — endpoints are watched, hiccups are auto-healed, and the founder gets a calm notification, not a fire drill. Live System Health endpoint responding.
 - **Human owns every gate** — nothing irreversible happens without approval. The machine presents; a human decides.
 
+## 📧 Email that knows your business — live Gmail, human-approved
+
+The strongest proof it's real: TYDAL is connected to a live Gmail inbox and works it like a member of the team.
+
+- **Ingests real email.** It polls the connected Gmail inbox (Google Gmail API), reads the full message body — not the truncated preview — and turns every new message into a tracked item in the business state machine. Senders are auto-labelled by domain and matched against your CRM.
+- **It drafts in your personality, against your rules.** Every reply is drafted in the founder's own plain-English style, driven by a business knowledge base: pricing, signup, and discount policy — "don't quote a discount, keep the decision with the founder." It ignores signature blocks, flags spam and notifications as no-reply, and recalls what it already knows about that contact from memory.
+- **Then a human approves every send.** The mail never goes out on its own — "AI drafted a reply · edit or send as-is · you approve every send." Approve / Deny / Hold is structural, not a suggestion.
+
+> **What the interviewer should hear:** I built an AI that reads a real Gmail inbox, turns each message into a tracked item, drafts replies in the business owner's personality using their actual pricing and discount rules, and never sends without human approval on every message. That's an email worker, not an email gadget.
+
 ## Engineering depth
 
 - **788/789 automated tests passing** across the platform — a real suite, not a demo.
