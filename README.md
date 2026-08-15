@@ -57,9 +57,13 @@ A revenue-oriented product, **live and selling**. Free AI Profile → verified l
 
 ---
 
-### 3. RFQ OS — Request-for-Quote Workflow Engine
+### 3. RFQ OS — Supplier-Aware Request-for-Quote Engine (Two Modes)
 
-Turns voice/structure into a pre-screened, QC-checked, order-ready workflow. It's honest about what it doesn't know — it flags unknowns rather than guessing — and it never advances past a human founder gate.
+A real business-process engine, not a chatbot. Turns voice/loose input into a pre-screened, QC-checked, order-ready workflow. **Honest about unknowns** (flags gaps, doesn't guess) · **supplier-respectful** (research-only by default, never contacts suppliers without approval) · **stops at a human founder gate** before any order.
+
+- **Two operating modes** — **Bring-Your-Own-Key** (customer keeps their own AI keys in an encrypted AES-GCM vault; platform charges subscription only and never mounts its own keys on the tenant path) and a **managed mode** (the platform supplies the AI). Same engine; the trust model changes.
+- **Zero-vendor-key offline path** — pre-screens a requirement with no vendor keys at all; live upgrade only when the user's vault key + active subscription + budget arm are in place.
+- **Platform-only billing + data portability** — real subscription lifecycle (activate/past-due/cancel), budget arms/caps, plus export and full org delete so a customer can leave cleanly.
 
 | What | Capture |
 |---|---|
@@ -91,9 +95,13 @@ Controlled send + inbox with a hard rule: **the model proposes, a human approves
 
 ---
 
-### 5. Rubik Resilience — Disaster-Risk Evidence System
+### 5. Rubik Resilience — Suburb-Level Disaster-Risk Intelligence That Shows Its Work
 
-Suburb-level risk scoring that backs every conclusion with an "evidence ladder" — sources you can climb, not a black box. Flags MONITOR / INVESTIGATE / ESCALATE.
+Suburb/community-level disaster-risk scoring backed by an **evidence ladder** — every claim traceable to a source you can climb, not a black box. Output is clear **MONITOR / INVESTIGATE / ESCALATE** triage, so a decision-maker knows what it means and what to do next.
+
+- **Multi-source grounding** — pulls from government/open disaster + community data into a coherent risk view, not one model's opinion.
+- **Auditable reasoning** — each claim carries its source; a human can inspect, challenge and re-check the chain.
+- **Decision-gated, not auto-deciding** — it recommends an action; a person reads the sources and decides. Built toward a council-facing disaster-intelligence shadow pilot; brand at rubikresilience.com.
 
 | What | Capture |
 |---|---|
