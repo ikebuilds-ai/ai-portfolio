@@ -38,6 +38,14 @@ And this is the **honest version** — before building it we audited our own jar
 - **You share what you choose.** A real cross-org access leak was found and sealed; a cross-org save-routing bug was fixed at the root so one reusable predicate governs all re-scoping.
 - **Real user verified end-to-end.** A non-technical family member was onboarded with her own secure space and verified a download landed in Finder the same day — *"the download button worked, it landed in Downloads."* That's the hardest test there is: a real human using it in anger.
 
+## 🧠 Two products, one platform — your business brain, and your agents
+
+**1. The business brain.** You get an LLM inside TYDAL you talk to every day. It runs the business: it ingests your email, reasons over **your** jars — your memories, your documents, your saved words — drives the state machine, drafts replies, and acts as your AI CTO. The memory is **yours, not the brain's**: the jars are your durable record, so swap the model (DeepSeek today, Claude tomorrow) and nothing is lost.
+
+**2. The agents' own space.** TYDAL can give **other agents — outside TYDAL entirely** — their own identity and their own space inside the team. That agent (an OpenClaw agent, a Hermes agent, anything) gets its own jars: **a persistent memory box it writes into**, that the platform it actually runs on points back to. You and that agent share memories across organisations.
+
+**The point of it.** This isn't a document store — it's a store of *lived memory shared between humans and their agents*, permissioned, durable, portable across any platform. Your business brain runs your business; your agents carry a memory that outlives any runtime.
+
 ## 🛡️ The AI CTO operator — self-healing + a calm founder surface
 
 - A **founder attention surface** — the answer, in five seconds, to: *is it healthy? what needs me? what changed? what next?*
@@ -51,6 +59,7 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 - **Ingests real email.** It polls the connected Gmail inbox (Google Gmail API), reads the full message body — not the truncated preview — and turns every new message into a tracked item in the business state machine. Senders are auto-labelled by domain and matched against your CRM.
 - **It drafts in your personality, against your rules.** Every reply is drafted in the founder's own plain-English style, driven by a business knowledge base: pricing, signup, and discount policy — "don't quote a discount, keep the decision with the founder." It ignores signature blocks, flags spam and notifications as no-reply, and recalls what it already knows about that contact from memory.
 - **Then a human approves every send.** The mail never goes out on its own — "AI drafted a reply · edit or send as-is · you approve every send." Approve / Deny / Hold is structural, not a suggestion.
+- **Approve from your phone.** When a draft is ready, the founder gets a **"Draft ready — your call"** card pushed straight to Telegram, with approve / deny actions wired to the real approval record. The gate travels with you — and it's a founder-flipped switch, so you arm it, not the machine.
 
 ## Engineering depth
 
