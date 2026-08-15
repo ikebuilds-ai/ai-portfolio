@@ -13,7 +13,7 @@
 
 ## Production-hardening (the "it actually works under real use" layer)
 
-- **Attachments end-to-end.** Full **multipart/MIME** support — compose with an attachment (photo, PDF, document), it rides the same approval lane, and **Gmail registers it as a genuine attachment**. Verified live: sent a real multipart message with an `image/png` attachment and confirmed it on the receiving side. Also reads attachments back: a received email with a file lands a card with a 📎 that **opens in two clicks**.
+- **Attachments end-to-end.** Full compose + read with real attachments (photo, PDF, document) — they ride the same approval lane, and Gmail registers them as genuine attachments. Verified live: sent a real email with a photo attached and confirmed it on the receiving side. Also reads attachments back: a received email with a file lands a card with a 📎 that **opens in two clicks**.
 - **Duplicate-send guard.** A confirmed-send dedupe stops the same message firing twice on a flaky connection — a genuine reliability bug that was found and killed, not swept under the rug.
 - **Retry keeps the file.** If a send fails on a blip, the retry **doesn't drop the attachment** or ghost the draft — it steers back to the safe approval card where the file is preserved.
 - **Mark-as-read from the chat card.** Open an inbound email from the rail → **📖 Mark as read** right on the card → it settles as Resolved and stops re-surfacing. No hunting through a decisions queue.

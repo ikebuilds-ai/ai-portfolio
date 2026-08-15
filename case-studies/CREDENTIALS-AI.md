@@ -15,7 +15,7 @@
 
 This is the part that separates it from a "business card website": credentials you can *prove*, not claim.
 
-- **Verification against official data.** The system calls the **Australian Business Register (ABR) API** using a **registered ABR web-services GUID**. It validates the ABN's checksum locally, then queries the ABR live to confirm the ABN is **active and registered** to the business claiming it.
+- **Verification against official data.** The system calls the **Australian Business Register (ABR) API** using a **registered ABR web-services GUID**, confirms the ABN is **active and registered** to the business claiming it, and stores what was checked.
 - **A stored verification snapshot.** The badge is rendered from a snapshot of what the ABR actually returned, so the verification page shows *what was checked and when* — it doesn't re-claim trust it can't back.
 - **A TrustBadge with a live verification page.** When verified, the profile displays a **TrustBadge** ("ABN Verified by Credentials AI") that one click opens onto a **public verification page** — the source, the status, the timestamp. No "trust us"; proof people can check themselves.
 - **Independent, honest framing.** Credentials AI is an **independent verification service, not a government body.** A TrustBadge is a record of checks, not an endorsement. That honesty is part of the build.
@@ -30,7 +30,7 @@ This is the part that separates it from a "business card website": credentials y
 ## Engineering depth
 
 - **Real payments** — Stripe checkout wired and live; proves I can ship something people pay for.
-- **ABR API integration** — live call to the official Australian Business Register using a registered GUID; ABN checksum validation + ABR status check; snapshot stored so the public page renders without hammering ABR.
+- **ABR API integration** — live call to the official Australian Business Register using a registered GUID; confirms the ABN is active and registered; snapshot stored so the public page renders without hammering ABR.
 - **Scanner-safe auth** — magic-link login that routes through a confirmation step so automated email scanners can't silently redeem a session.
 - **Verified lead funnel** — free profile → ABN verification → tracked enquiry → conversion, with a live dashboard of leads.
 - **First-party transactional email lane** — owns its own server email (dashboard access, order notifications, lead alerts) rather than depending on a third party.

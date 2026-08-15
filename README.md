@@ -25,7 +25,7 @@ In the last ~10 weeks, alongside a full-time job, I applied that same discipline
 
 Built from scratch and live. **You hand it your whole business** — customers, jobs, pricing, files, inbox. A **state machine** turns raw signals into a ranked "what needs the founder" view (approval queue, revenue/invoice tracking, time-based resurfacing) · **immutable data with provenance** (pristine, transportable, compounding, pre/post-reasoned, tamper-quarantining) · **shared jars** (cross-org, per-request re-scoping) · **AI CTO operator** (self-healing + calm founder surface). The assistant is an accountable member of the org — not a stateless chatbot. **Live Gmail: it ingests real email, drafts replies in your personality against your actual pricing/rules, and a human approves every send — right from your phone via a Telegram approval card.** Two products in one: a business brain that reasons over *your* memory jars, and a space where your *external* agents (OpenClaw, Hermes, anything) get their own ID, their own persistent memory box, and share jars with you cross-org. 788/789 tests green.
 
-Engineering-depth highlights: **multi-tenant isolation enforced at the data plane** (one reusable predicate re-scopes every access; real non-technical user verified in her own separated org) · **permissioned shared jars** (view/edit roles, private jars stay dark, owner-only delete) · **immutability law-enforced** (store refuses illegal state changes, verbatim text pinned, tamper-quarantining, nothing ever silently deleted) · **a consent system that treats memory-writes like outbound actions** (explicit ask required, deterministic guard, survives iOS smart-quote edge cases) · **a versioned knowledge base** steering live customer email with the founder's byte-verified words · full **multipart MIME send + read** with real attachments, duplicate-send guard, retry-keeps-file. Full detail in the case study.
+Engineering-depth highlights: **multi-tenant isolation enforced across the whole system** (every tenant's access re-scoped to their own org; real non-technical user verified in her own separated space) · **permissioned shared spaces** (view/edit roles, private stays private, owner-only removal) · **immutability law-enforced** (system refuses illegal state changes, verbatim words pinned, tamper-quarantining, nothing ever silently deleted) · **a consent system that treats memory-writes like outbound actions** (explicit ask required, intent can't be written around by an inbound email) · **a governed knowledge base** steering live customer email with the founder's exact words · full **send + read-back of emails with real attachments**, duplicate-send guard, retry-keeps-file. All described by capability — full detail in the case study.
 
 | What | Capture |
 |---|---|
@@ -63,7 +63,7 @@ A revenue-oriented product, **live and selling**. Free AI Profile → verified l
 
 A real business-process engine, not a chatbot. Turns voice/loose input into a pre-screened, QC-checked, order-ready workflow. **Honest about unknowns** (flags gaps, doesn't guess) · **supplier-respectful** (research-only by default, never contacts suppliers without approval) · **stops at a human founder gate** before any order.
 
-- **Two operating modes** — **Bring-Your-Own-Key** (customer keeps their own AI keys in an encrypted AES-GCM vault; platform takes a platform subscription rather than riding the customer's key spend, and never mounts its own keys on the tenant path) and a **managed mode** (the platform supplies the AI). Same engine; the trust model changes.
+- **Two operating modes** — **Bring-Your-Own-Key** (customer keeps their own AI keys in an encrypted vault; platform takes a platform subscription rather than riding the customer's key spend, and never mounts its own keys on the tenant path) and a **managed mode** (the platform supplies the AI). Same engine; the trust model changes.
 - **Zero-vendor-key offline path** — pre-screens a requirement with no vendor keys at all; live upgrade only when the user's vault key + active subscription + budget arm are in place.
 - **Billing model + data portability built in** — subscription lifecycle (activate/past-due/cancel) and budget arms/caps engineered into the product, plus export and full org delete. *(The billing is a model, not yet a live payment rail.)*
 
@@ -83,7 +83,7 @@ Controlled send + inbox with a hard rule: **the model proposes, a human approves
 
 - **Live Gmail ingestion + drafting** — reads real inbound email, drafts in your personality against your actual pricing/rules.
 - **Approval card, reachable on the phone** — a real send is approved from **Telegram on a phone**, not just at a desk.
-- **Attachments end-to-end** — multipart/MIME compose + read, Gmail-registered on the receiving side; a received file opens in two clicks.
+- **Attachments end-to-end** — full compose + read with real attachments; a received file opens in two clicks.
 - **Safety-hardened** — duplicate-send guard, retry-that-keeps-the-file, mark-as-read on the chat card, archived items never resurrect.
 
 | What | Capture |
