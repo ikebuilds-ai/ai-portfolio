@@ -10,27 +10,25 @@ The deepest layer is an **operational state machine** that turns raw business si
 
 - **It reads the room.** Put your files in and it reasons out what business you're in — *"you're a plumbing business, four staff, these are your customers, this is your sales pipeline"* — and assigns everything to the right object (customer / job / opportunity / invoice).
 - **A state machine under the hood.** A 10-transition state machine with **8 enforced invariants** and append-only, idempotent events — the database itself **refuses illegal state changes**. 18/18 engine tests green, plus a full priority-engine test suite on top.
-- **The "what needs me right now?" engine.** A priority router (I built it as the "Amber Engine") that scores every open item. It's got real business logic baked in:
+- **The "what needs me right now?" engine.** A priority router that scores every open item. It's got real business logic baked in:
   - **Customers outrank tech-tinkering.**
   - **Money on the table lifts a conversation.**
   - A fade guard lets stale junk age out so the queue stays truthful, not noisy.
 - **Approval queue / "waiting on you."** Every action that needs a founder decision surfaces in a ranked queue, with **time-based resurfacing** — things you've let slip come back so nothing dies quietly.
-- **Revenue, invoices and pricing wired in.** customer ABR check → live profile → pricing logic → `invoice.paid` events flow straight into the engine and move the state.
+- **Revenue, invoices and pricing wired in.** The business's own pricing rules feed the engine, and `invoice.paid` events flow straight in and move the state.
 - **Email woven underneath.** Drafts, send, and invoice awareness all live under the same state model — the email rail is one worker in the machine, not a separate app.
-
-> **What the interviewer should hear:** *I built a state machine that runs a whole business — it sorts customers, jobs and pricing into a ranked "what needs the founder" view, with approval gates, revenue tracking, and time-based resurfacing. That's a workflow engine, not a chatbot.*
 
 ## 🧬 Immutable data with provenance (the "machine never chews your words")
 
 The data layer is built so the record **can't quietly change underneath you**:
 
-- **Pristine** — exact text is never truncated; enforced by code, a DB trigger that verifies the hash matches the words, and a codebase guard test.
-- **Transportable** — converter doors on both sides of every import/export; the export envelope carries a fingerprint so a receiver can prove what they got.
-- **Compounding** — a `derived_from` chain of custody: a reasoned conclusion keeps the hashes of every source it was built from.
-- **Pre- and post-reasoned** — export, reason elsewhere, then a return gate verifies the parents before it lands as a *derived* entry, still marked untrusted.
-- **WITH PROVENANCE** — a sealed, set-level envelope re-verified at export time; any drift is **quarantined on return**.
+- **Pristine** — exact text is never truncated, enforced at ingest so what you said is what's stored.
+- **Transportable** — exports carry a fingerprint so a receiver can prove what they actually got.
+- **Compounding** — a reasoned conclusion keeps a chain of custody back to every source it was built from.
+- **Pre- and post-reasoned** — export, reason elsewhere, then re-import is verified before it lands, still marked untrusted.
+- **WITH PROVENANCE** — a sealed, re-verified envelope; any drift is caught and quarantined on return.
 
-Live receipts: 65/65 rows in one format · 0 drifted · **6/6 illegal writes refused by the database itself** · tamper a sealed envelope and it fails · cite a parent you never wrote and you're quarantined.
+Live receipts: 65/65 records in one canonical format · 0 drifted · the store **refuses illegal state changes** · tamper a sealed export and it fails · cite a source you never wrote and you're quarantined.
 
 And this is the **honest version** — before building it we audited our own jar and found **34 memories our own machine had chewed beyond recovery**. We healed the 3 that were recoverable and **flagged the 34 as `degraded`** rather than silently passing them off as perfect. We found the flaw in our own house first, and we still won't hide it.
 
@@ -53,8 +51,6 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 - **Ingests real email.** It polls the connected Gmail inbox (Google Gmail API), reads the full message body — not the truncated preview — and turns every new message into a tracked item in the business state machine. Senders are auto-labelled by domain and matched against your CRM.
 - **It drafts in your personality, against your rules.** Every reply is drafted in the founder's own plain-English style, driven by a business knowledge base: pricing, signup, and discount policy — "don't quote a discount, keep the decision with the founder." It ignores signature blocks, flags spam and notifications as no-reply, and recalls what it already knows about that contact from memory.
 - **Then a human approves every send.** The mail never goes out on its own — "AI drafted a reply · edit or send as-is · you approve every send." Approve / Deny / Hold is structural, not a suggestion.
-
-> **What the interviewer should hear:** I built an AI that reads a real Gmail inbox, turns each message into a tracked item, drafts replies in the business owner's personality using their actual pricing and discount rules, and never sends without human approval on every message. That's an email worker, not an email gadget.
 
 ## Engineering depth
 
