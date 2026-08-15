@@ -34,7 +34,7 @@ Live receipts: 65/65 records in one canonical format · 0 drifted · the store *
 
 - **Cross-org, multi-tenant.** Each organisation keeps its own secure space with **per-request re-scoping** — one org can never see another's data.
 - **You share what you choose.** Cross-org sharing is scoped and deliberate — a member sees exactly what they've been granted, nothing else.
-- **Real user verified end-to-end.** A non-technical family member was onboarded with her own secure space and verified a download landed in Finder the same day — *"the download button worked, it landed in Downloads."* That's the hardest test there is: a real human using it in anger.
+- **Real user verified end-to-end.** A non-technical family member was onboarded with her own secure space and verified a download landed in Finder the same day — *"the download button worked, it landed in Downloads."* A real human using a real product, verified first-hand.
 
 ## 🧠 Two products, one platform — your business brain, and your agents
 
