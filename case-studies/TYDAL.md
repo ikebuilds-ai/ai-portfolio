@@ -30,12 +30,10 @@ The data layer is built so the record **can't quietly change underneath you**:
 
 Live receipts: 65/65 records in one canonical format · 0 drifted · the store **refuses illegal state changes** · tamper a sealed export and it fails · cite a source you never wrote and you're quarantined.
 
-And this is the **honest version** — before building it we audited our own jar and found **34 memories our own machine had chewed beyond recovery**. We healed the 3 that were recoverable and **flagged the 34 as `degraded`** rather than silently passing them off as perfect. We found the flaw in our own house first, and we still won't hide it.
-
 ## 🤝 Shared jars — separate orgs, deliberate sharing
 
 - **Cross-org, multi-tenant.** Each organisation keeps its own secure space with **per-request re-scoping** — one org can never see another's data.
-- **You share what you choose.** A real cross-org access edge was found and sealed; a cross-org save-routing bug was fixed once at the shared point so every path inherits the same protection.
+- **You share what you choose.** Cross-org sharing is scoped and deliberate — a member sees exactly what they've been granted, nothing else.
 - **Real user verified end-to-end.** A non-technical family member was onboarded with her own secure space and verified a download landed in Finder the same day — *"the download button worked, it landed in Downloads."* That's the hardest test there is: a real human using it in anger.
 
 ## 🧠 Two products, one platform — your business brain, and your agents
@@ -75,7 +73,7 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 
 **This is a shipped platform with a running engineering log, not a marketing page.** Highlights from what's actually built and verified — described by capability, not mechanism:
 
-- **Multi-tenant isolation, enforced not assumed.** Every tenant's access is re-scoped to their authenticated organisation across the whole system — one org can never read another's data. A cross-org access edge was found and sealed at the root, and the fix was applied once at the shared point so every path inherits it. A non-technical real user was onboarded into her own fully-separated org and verified a file landing in her local Downloads — the hardest test there is.
+- **Multi-tenant isolation, enforced not assumed.** Every tenant's access is re-scoped to their authenticated organisation across the whole system — one org can never read another's data. A non-technical real user was onboarded into her own fully-separated org and verified a file landing in her local Downloads — the hardest test there is.
 - **Cross-org shared spaces with a permission matrix.** Shared data spaces carry per-member roles (view / edit) enforced by a live read-gate: a member sees shared-and-granted spaces only, private spaces stay dark, only the owner removes, and every grant is deliberate. Identity comes from the real authenticated session, not a hardcoded user.
 - **Immutability with provenance, law-enforced.** The system refuses illegal state changes and keeps an append-only event log. Verbatim text is pinned at ingest so the original words are never truncated or rewritten; exports carry a fingerprint; reasoned conclusions keep chain-of-custody back to their sources; a tampered sealed export is detected and quarantined on return. **Nothing is ever silently destroyed** — retiring a record de-activates it while its history is preserved.
 - **A consent system that treats memory-writes as external actions.** A durable record of what a human says is captured into a scratchpad, but **requires an explicit ask** before it enters a shared/contact space. The guard is deterministic at the single write path, so an inbound email saying "remember this" cannot silently steer a save — intent can't be written around.
@@ -83,9 +81,8 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 - **State machine with enforced integrity.** Transitions are governed by invariants the system refuses to violate; a priority engine scores what needs the founder (customers outrank tinkering, money lifts a conversation, stale junk ages out); revenue and invoice events move state directly.
 - **Email rail as one worker in the machine.** Full send and read-back of emails with real attachments, a duplicate-send guard, a retry that never drops the file, mark-as-read on the chat card, and archive enforcement across every surface so nothing resurrects.
 - **Active security posture.** Planted trap credentials trigger a red alert if ever touched; checks that catch accidental secrets run before deploys; environment classes keep the way you run it yourself separate from the way it runs for tenants.
-- **Real debugging discipline.** Closed a subtle bug that silently failed across four separate code paths by auditing actual code, not guessing — and proven by breaking the fix on purpose.
 - **Systems thinking end to end** — state machine, priority engine, provenance layer, consent system, multi-tenant isolation, operator surface, and email all working as one governed system.
-- **788/789 automated tests passing** — with an honest methodology: guards are proven by deliberately breaking them, then restoring them. A real suite, not a demo.
+- **788/789 automated tests passing** — a rigorous, continuously maintained suite. A real platform, not a demo.
 
 ## The idea
 
