@@ -60,6 +60,7 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 - **It drafts in your personality, against your rules.** Every reply is drafted in the founder's own plain-English style, driven by a business knowledge base: pricing, signup, and discount policy — "don't quote a discount, keep the decision with the founder." It ignores signature blocks, flags spam and notifications as no-reply, and recalls what it already knows about that contact from memory.
 - **Then a human approves every send.** The mail never goes out on its own — "AI drafted a reply · edit or send as-is · you approve every send." Approve / Deny / Hold is structural, not a suggestion.
 - **Approve from your phone.** When a draft is ready, the founder gets a **"Draft ready — your call"** card pushed straight to Telegram, with approve / deny actions wired to the real approval record. The gate travels with you — and it's a founder-flipped switch, so you arm it, not the machine.
+- **Attachments work both ways.** Files land in the system with a real download path (a non-technical user verified an upload landed in her Finder the same day), and you can add files to a reply and send them out with it — approved, like everything else.
 
 ## Engineering depth
 
