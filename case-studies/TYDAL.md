@@ -52,6 +52,15 @@ And this is the **honest version** — before building it we audited our own jar
 - **Self-healing infrastructure** — endpoints are watched, hiccups are auto-healed, and the founder gets a calm notification, not a fire drill. Live System Health endpoint responding.
 - **Human owns every gate** — nothing irreversible happens without approval. The machine presents; a human decides.
 
+## 📲 It reaches you — Telegram alerts for the things that need you
+
+This is the bit nobody else builds: the AI doesn't sit waiting in a dashboard — **it comes to you.**
+
+- **"What needs you?" right now.** Instead of you checking a screen, the system pushes the founder a heads-up on what actually needs a decision.
+- **"Draft ready — your call."** When an email reply is drafted, an approval card lands in the founder's **Telegram** with approve / deny wired to the real approval record — you can run the whole approval gate off your phone.
+- **Health alerts, not fire drills.** If something in the infrastructure hiccups, you get a calm alert — including the security lane (a planted honeypot being touched fires a red alert to the same channel). You hear about the real things, and only the real things.
+- **You arm it, not the machine.** The whole alert lane is a founder-flipped switch — the system is silent until *you* turn it on.
+
 ## 📧 Email that knows your business — live Gmail, human-approved
 
 The strongest proof it's real: TYDAL is connected to a live Gmail inbox and works it like a member of the team.
@@ -59,7 +68,7 @@ The strongest proof it's real: TYDAL is connected to a live Gmail inbox and work
 - **Ingests real email.** It polls the connected Gmail inbox (Google Gmail API), reads the full message body — not the truncated preview — and turns every new message into a tracked item in the business state machine. Senders are auto-labelled by domain and matched against your CRM.
 - **It drafts in your personality, against your rules.** Every reply is drafted in the founder's own plain-English style, driven by a business knowledge base: pricing, signup, and discount policy — "don't quote a discount, keep the decision with the founder." It ignores signature blocks, flags spam and notifications as no-reply, and recalls what it already knows about that contact from memory.
 - **Then a human approves every send.** The mail never goes out on its own — "AI drafted a reply · edit or send as-is · you approve every send." Approve / Deny / Hold is structural, not a suggestion.
-- **Approve from your phone.** When a draft is ready, the founder gets a **"Draft ready — your call"** card pushed straight to Telegram, with approve / deny actions wired to the real approval record. The gate travels with you — and it's a founder-flipped switch, so you arm it, not the machine.
+- **Approve from your phone.** When a draft is ready, the founder gets a **"Draft ready — your call"** card pushed straight to Telegram — see the *It reaches you* section below. The gate travels with you, and it's founder-flipped, not machine-flipped.
 - **Attachments work both ways.** Files land in the system with a real download path (a non-technical user verified an upload landed in her Finder the same day), and you can add files to a reply and send them out with it — approved, like everything else.
 
 ## Engineering depth
