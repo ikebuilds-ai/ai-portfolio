@@ -34,9 +34,16 @@ Built from scratch and live. **You hand it your whole business** — customers, 
 
 ---
 
-### 2. Credentials AI — Commercial Lead-Generation AI Product *(live, monetised)*
+### 2. Credentials AI — Live Business-Trust Product, ABN-Verified *(commercial, monetised)*
 
-A revenue-oriented product: **free AI Profile → verified lead engine → paid**, with **Stripe checkout live**. Free AI-search profiles that verify a business exists, then convert interest into tracked enquiries.
+A revenue-oriented product, **live and selling**. Free AI Profile → verified lead engine → paid (Stripe). The trust layer is the heart: it verifies a business against **official data** and issues a **TrustBadge**.
+
+- **ABN verification against official records** — calls the **Australian Business Register (ABR) API** with a registered ABR web-services GUID, confirms the ABN is active and registered, and stores what was checked.
+- **TrustBadge with a live verification page** — a verified business displays a badge that opens onto a public page showing the source, status and timestamp. Independent verification, honestly framed (not a government body).
+- **AI-readable hosted profile** — structured so AI tools and search engines can read it (not just human eyeballs).
+- **QR kit + embeddable badge** — truck sticker / window / quote-tag; owners embed the proof on their own site.
+- **Profile theming** — hosted profile takes the business's branding (e.g. profile colour), not a generic template.
+- **Tracked enquiries** — tap-to-call / request-a-quote land as an exact count per profile.
 
 | What | Capture |
 |---|---|
@@ -64,9 +71,14 @@ Turns voice/structure into a pre-screened, QC-checked, order-ready workflow. It'
 
 ---
 
-### 4. AI Email / Send System — Human-Approval Gates
+### 4. AI Email / Send System — Human-Approval Gates, Production-Proven
 
-Controlled send + inbox with a hard rule: **the model proposes, a human approves before anything goes out.** Exactly the safety-conscious agent design enterprise AI teams want to see.
+Controlled send + inbox with a hard rule: **the model proposes, a human approves before anything goes out.** Used for **Ike's real daily email**, not a mockup.
+
+- **Live Gmail ingestion + drafting** — reads real inbound email, drafts in your personality against your actual pricing/rules.
+- **Approval card, reachable on the phone** — a real send is approved from **Telegram on a phone**, not just at a desk.
+- **Attachments end-to-end** — multipart/MIME compose + read, Gmail-registered on the receiving side; a received file opens in two clicks.
+- **Safety-hardened** — duplicate-send guard, retry-that-keeps-the-file, mark-as-read on the chat card, archived items never resurrect.
 
 | What | Capture |
 |---|---|
