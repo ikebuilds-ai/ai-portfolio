@@ -21,9 +21,9 @@ In the last ~10 weeks, alongside a full-time job, I applied that same discipline
 
 ## The systems
 
-### 1. TYDAL / "Brain Portal" — Multi-Tenant AI Agent Platform *(flagship)*
+### 1. TYDAL — Multi-Tenant AI Agent Platform That Runs a Business *(flagship)*
 
-Built from scratch and live in production. A multi-tenant, cross-organisation AI system where the assistant is an accountable, revocable member of your organisation — not a stateless chatbot.
+Built from scratch and live. **You hand it your whole business** — customers, jobs, pricing, files, inbox. A **state machine** turns raw signals into a ranked "what needs the founder" view (approval queue, revenue/invoice tracking, time-based resurfacing) · **immutable data with provenance** (pristine, transportable, compounding, pre/post-reasoned, tamper-quarantining) · **shared jars** (cross-org, per-request re-scoping) · **AI CTO operator** (self-healing + calm founder surface). The assistant is an accountable member of the org — not a stateless chatbot. 788/789 tests green.
 
 | What | Capture |
 |---|---|

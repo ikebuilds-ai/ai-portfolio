@@ -1,29 +1,57 @@
-# TYDAL / "Brain Portal" — Multi-Tenant AI Agent Platform
+# TYDAL — Multi-Tenant AI Agent Platform That Runs a Business
 
 **The flagship.** A multi-tenant, cross-organisation AI system built from scratch and shipped to production — in about 10 weeks, alongside a full-time day job.
 
-## What it is
+TYDAL isn't a chatbot demo. It's an **agent platform you hand your whole business to** — customers, jobs, pricing, files, inbox — where the AI is an accountable member of your organisation, data is immutable and provenance-checked, and **a human approves every decision that matters.**
 
-Not a chatbot demo. It's an AI **agent platform** where the assistant exists as its own accountable member of an organisation:
+## ⚙️ It runs a business: customers, jobs, pricing
 
-- The AI has **durable memory** and an **agent identity** — it's revocable, and it's answerable to the human who owns the space.
-- Data lives in integrity-checked "jars" with provenance tracking — the record is **verifiable and tamper-evident**. This is the "the machine never chews the words" principle: what was said and stored stays exactly as it was.
-- **Multi-tenant with per-request security re-scoping** — one organisation can never see another's data, and a real cross-org access leak was found and sealed.
+The deepest layer is an **operational state machine** that turns raw business signals into a ranked, actionable founder view. Throw your files and conversations in, and it works out what kind of business you are and what actually needs you.
 
-## Screenshots
+- **It reads the room.** Put your files in and it reasons out what business you're in — *"you're a plumbing business, four staff, these are your customers, this is your sales pipeline"* — and assigns everything to the right object (customer / job / opportunity / invoice).
+- **A state machine under the hood.** A 10-transition state machine with **8 enforced invariants** and append-only, idempotent events — the database itself **refuses illegal state changes**. 18/18 engine tests green, plus a full priority-engine test suite on top.
+- **The "what needs me right now?" engine.** A priority router (I built it as the "Amber Engine") that scores every open item. It's got real business logic baked in:
+  - **Customers outrank tech-tinkering.**
+  - **Money on the table lifts a conversation.**
+  - A fade guard lets stale junk age out so the queue stays truthful, not noisy.
+- **Approval queue / "waiting on you."** Every action that needs a founder decision surfaces in a ranked queue, with **time-based resurfacing** — things you've let slip come back so nothing dies quietly.
+- **Revenue, invoices and pricing wired in.** customer ABR check → live profile → pricing logic → `invoice.paid` events flow straight into the engine and move the state.
+- **Email woven underneath.** Drafts, send, and invoice awareness all live under the same state model — the email rail is one worker in the machine, not a separate app.
 
-| What | Capture |
-|---|---|
-| Dashboard — the assistant saves to an immutable, provenance-tracked store | [`tydal-dashboard-save-memory.png`](../portfolio-assets/tydal-dashboard-save-memory.png) |
-| A "jar" (data space) with integrity-checked provenance | [`tydal-jar-provenance-prestine.png`](../portfolio-assets/tydal-jar-provenance-prestine.png) |
+> **What the interviewer should hear:** *I built a state machine that runs a whole business — it sorts customers, jobs and pricing into a ranked "what needs the founder" view, with approval gates, revenue tracking, and time-based resurfacing. That's a workflow engine, not a chatbot.*
+
+## 🧬 Immutable data with provenance (the "machine never chews your words")
+
+The data layer is built so the record **can't quietly change underneath you**:
+
+- **Pristine** — exact text is never truncated; enforced by code, a DB trigger that verifies the hash matches the words, and a codebase guard test.
+- **Transportable** — converter doors on both sides of every import/export; the export envelope carries a fingerprint so a receiver can prove what they got.
+- **Compounding** — a `derived_from` chain of custody: a reasoned conclusion keeps the hashes of every source it was built from.
+- **Pre- and post-reasoned** — export, reason elsewhere, then a return gate verifies the parents before it lands as a *derived* entry, still marked untrusted.
+- **WITH PROVENANCE** — a sealed, set-level envelope re-verified at export time; any drift is **quarantined on return**.
+
+Live receipts: 65/65 rows in one format · 0 drifted · **6/6 illegal writes refused by the database itself** · tamper a sealed envelope and it fails · cite a parent you never wrote and you're quarantined.
+
+And this is the **honest version** — before building it we audited our own jar and found **34 memories our own machine had chewed beyond recovery**. We healed the 3 that were recoverable and **flagged the 34 as `degraded`** rather than silently passing them off as perfect. We found the flaw in our own house first, and we still won't hide it.
+
+## 🤝 Shared jars — separate orgs, deliberate sharing
+
+- **Cross-org, multi-tenant.** Each organisation keeps its own secure space with **per-request re-scoping** — one org can never see another's data.
+- **You share what you choose.** A real cross-org access leak was found and sealed; a cross-org save-routing bug was fixed at the root so one reusable predicate governs all re-scoping.
+- **Real user verified end-to-end.** A non-technical family member was onboarded with her own secure space and verified a download landed in Finder the same day — *"the download button worked, it landed in Downloads."* That's the hardest test there is: a real human using it in anger.
+
+## 🛡️ The AI CTO operator — self-healing + a calm founder surface
+
+- A **founder attention surface** — the answer, in five seconds, to: *is it healthy? what needs me? what changed? what next?*
+- **Self-healing infrastructure** — endpoints are watched, hiccups are auto-healed, and the founder gets a calm notification, not a fire drill. Live System Health endpoint responding.
+- **Human owns every gate** — nothing irreversible happens without approval. The machine presents; a human decides.
 
 ## Engineering depth
 
-- **788/789 automated tests passing** — a real test suite, not a demo.
-- **Real debugging** — diagnosed and closed a subtle **4-surface file-disposition bug** (a browser download silently failed across four separate code paths) by auditing actual code, not guessing.
-- **Cross-org save-routing fix** — when a save landed in the wrong organisation, the routing predicate was fixed at the root so one reusable rule governs all rescoping.
-- **Real user verified end-to-end** — a tradesperson's family member (non-technical) was onboarded with her own secure space and verified a download landed in Finder **the same day** ("the download button worked, it landed in Downloads"). This is the hardest test there is: a real, non-technical human using it in anger.
+- **788/789 automated tests passing** across the platform — a real suite, not a demo.
+- **Real debugging** — diagnosed and closed a subtle 4-surface file-disposition bug (a browser download silently failed across four separate code paths) by auditing actual code, not guessing.
+- **Systems thinking end to end** — state machine, priority engine, provenance layer, multi-tenant isolation, operator surface, and email all working as one governed system.
 
 ## The idea
 
-**Data Presents. Human Decides.** The assistant surfaces truth and options; the human owns the space and can revoke the assistant. Immutable stores mean the record can't quietly change underneath anyone.
+**Data Presents. Human Decides.** The assistant surfaces truth and options; the human owns the space, can revoke the assistant, and approves every decision that matters. "The machine never chews your words" is the law underneath it — for customers, for jobs, and for the agent itself.
