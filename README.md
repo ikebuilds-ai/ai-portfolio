@@ -20,6 +20,8 @@ In the last ~10 weeks, alongside a full-time job, I applied that same discipline
 ### 🛡️ IP Protection Notice
 
 > **Source code is currently private under NDAs and intellectual-property protection, prior to commercial licensing.** What you see in this repo is the *proof of engineering* — real running systems, production test suites, architecture and security decisions — so you can evaluate depth and competence without exposing the proprietary code itself or its business logic.
+>
+> **One project is fully open-source** so you can verify for yourself: **[SelfHeal](https://github.com/ikebuilds-ai/selfheal-byok)** (system #2 below) is public, installable, and readable start-to-finish — proof of how I actually engineer, not just talk about it.
 
 ### 🛠️ How this repo proves engineering without showing source
 
@@ -52,7 +54,7 @@ Engineering-depth highlights: **multi-tenant isolation enforced across the whole
 
 ### 2. SelfHeal — A Governed Self-Heal Harness for AI Agents *(public product, installable via git clone)*
 
-**A bring-your-own-key product that gives an AI agent safe, *governed* hands to keep its own stack alive.** Public and installable: `github.com/ikebuilds-ai/selfheal-byok` — `git clone` → `npm install` → 67 passing checks (mainline + LLM-provider + Telegram suites). This is the *same engine* we run on our own production every day, productised. It's the cleanest single answer to "show me how you engineer" — the source is open for you to read.
+**A bring-your-own-key product that gives an AI agent safe, *governed* hands to keep its own stack alive.** Public and installable: **[github.com/ikebuilds-ai/selfheal-byok](https://github.com/ikebuilds-ai/selfheal-byok)** — `git clone` → `npm install` → 67 passing checks (mainline + LLM-provider + Telegram suites). This is the *same engine* we run on our own production every day, productised. It's the cleanest single answer to "show me how you engineer" — **the source is open for you to read.**
 
 How it works: you choose the endpoints, it auto-derives each one's **blast radius**, grades it on a **DS autonomy ladder** (DS-A read-only → DS-B safe auto-heal → DS-C/D need a human → DS-E protected surface, *never* auto-touched), then either auto-heals the safe stuff or **holds the risky stuff and asks a person** on your chosen approval channel (stdout / Telegram / webhook). It brings its own model key (OpenAI / OpenRouter / any OpenAI-compatible like Ollama), sealed in an AES-256-GCM vault on your own box — no company fallback key. Every heal is logged as an exact `health.red → health.healed` audit trail with a rolling 24h counter.
 
