@@ -19,7 +19,7 @@ In the last ~10 weeks, alongside a full-time job, I applied that same discipline
 
 ### 🛡️ IP Protection Notice
 
-> **Source code is currently private under NDAs and intellectual-property protection, prior to commercial licensing.** What you see in this repo is the *proof of engineering* — real running systems, production test suites, architecture and security decisions — so you can evaluate depth and competence without exposing the proprietary code itself or its business logic.
+> **These projects contain novel ideas and implementation, so the source is kept private to protect that IP prior to any commercial licensing.** What you see in this repo is the *proof of engineering* — real running systems, production test suites, architecture and security decisions — so you can evaluate depth and competence without exposing the proprietary code itself or its business logic.
 >
 > **One project is fully open-source** so you can verify for yourself: **[SelfHeal](https://github.com/ikebuilds-ai/selfheal-byok)** (system #2 below) is public, installable, and readable start-to-finish — proof of how I actually engineer, not just talk about it.
 
