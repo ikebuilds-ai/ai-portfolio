@@ -1,8 +1,8 @@
-# Isaac "Ike" Anasson — Proof of Work, Not a CV
+# Isaac "Ike" Anasson — Proof of Work
 
 **Self-taught AI systems builder.** 20 years in precision trade — stainless fabrication and TIG welding — taught me that *quality is a system, not a feeling*. I inspect. I verify. I certify. I don't guess.
 
-In the last ~10 weeks, alongside a full-time job, I applied that same discipline to an entirely new domain: I **designed, built, and shipped** a multi-tenant AI platform from scratch, plus a separate commercial product with real payment processing. Real users. Real security. A real test suite (788/789 passing). **No CS degree — a builder who ships.**
+In the last ~10 weeks, alongside a full-time job, I applied that same discipline to an entirely new domain: I **designed, built, and shipped** a multi-tenant AI platform from scratch, a separate commercial product with real payment processing, **and an open-source product (SelfHeal) that's live and installable on GitHub**. Real users. Real security. A real test suite (788/789 passing). **No CS degree — a builder who ships.**
 
 > **The one idea that runs through everything I build:**
 > **"Data Presents. Human Decides."**
@@ -50,7 +50,18 @@ Engineering-depth highlights: **multi-tenant isolation enforced across the whole
 
 ---
 
-### 2. Credentials AI — Live Business-Trust Product, ABN-Verified *(commercial, monetised)*
+### 2. SelfHeal — A Governed Self-Heal Harness for AI Agents *(public product, installable via git clone)*
+
+**A bring-your-own-key product that gives an AI agent safe, *governed* hands to keep its own stack alive.** Public and installable: `github.com/ikebuilds-ai/selfheal-byok` — `git clone` → `npm install` → 67 passing checks (mainline + LLM-provider + Telegram suites). This is the *same engine* we run on our own production every day, productised. It's the cleanest single answer to "show me how you engineer" — the source is open for you to read.
+
+How it works: you choose the endpoints, it auto-derives each one's **blast radius**, grades it on a **DS autonomy ladder** (DS-A read-only → DS-B safe auto-heal → DS-C/D need a human → DS-E protected surface, *never* auto-touched), then either auto-heals the safe stuff or **holds the risky stuff and asks a person** on your chosen approval channel (stdout / Telegram / webhook). It brings its own model key (OpenAI / OpenRouter / any OpenAI-compatible like Ollama), sealed in an AES-256-GCM vault on your own box — no company fallback key. Every heal is logged as an exact `health.red → health.healed` audit trail with a rolling 24h counter.
+
+**Engineering-depth highlights:** real safety-by-default (a named database/queue engine in an endpoint — `postgres`, `mysql`, `kafka`, `redis`, ... — auto-forces DS-E, never auto-healed even if misconfigured) · blast radius **auto-derived**, not a manual dropdown · multi-provider BYOK via a single OpenAI-compatible transport · a read/write dashboard with onboarding explainers · reboot-survival supervisor on a health-checked cron · real Telegram holds tested against production. **Verified installable from a clean clone — zero VPS dependencies.**
+
+> **Engineered With:** Node.js · zero-dependency (vanilla Node) · AES-256-GCM sealed credential vault (byte-compatible with the canonical vault, never drifted) · OpenRouter / OpenAI / OpenAI-compatible providers · Telegram Bot API · colour-coded DS-ladder dashboard.
+> **Status (honest):** public + open-source; we dogfood it on our own live infra; no revenue yet (that's the current go-to-market).
+
+### 3. Credentials AI — Live Business-Trust Product, ABN-Verified *(commercial, monetised)*
 
 A revenue-oriented product, **live and selling**. Free AI Profile → verified lead engine → paid (Stripe). The trust layer is the heart: it verifies a business against **official data** and issues a **TrustBadge**.
 
@@ -75,7 +86,7 @@ A revenue-oriented product, **live and selling**. Free AI Profile → verified l
 
 ---
 
-### 3. RFQ OS — Supplier-Aware Request-for-Quote Engine (Two Modes)
+### 4. RFQ OS — Supplier-Aware Request-for-Quote Engine (Two Modes)
 
 A real business-process engine, not a chatbot. Turns voice/loose input into a pre-screened, QC-checked, order-ready workflow. **Honest about unknowns** (flags gaps, doesn't guess) · **supplier-respectful** (research-only by default, never contacts suppliers without approval) · **stops at a human founder gate** before any order.
 
@@ -95,7 +106,7 @@ A real business-process engine, not a chatbot. Turns voice/loose input into a pr
 
 ---
 
-### 4. AI Email / Send System — Human-Approval Gates, Production-Proven
+### 5. AI Email / Send System — Human-Approval Gates, Production-Proven
 
 Controlled send + inbox with a hard rule: **the model proposes, a human approves before anything goes out.** Used for **Ike's real daily email**, not a mockup.
 
@@ -117,7 +128,7 @@ Controlled send + inbox with a hard rule: **the model proposes, a human approves
 
 ---
 
-### 5. Rubik Resilience — Suburb-Level Disaster-Risk Intelligence That Shows Its Work
+### 6. Rubik Resilience — Suburb-Level Disaster-Risk Intelligence That Shows Its Work
 
 Suburb/community-level disaster-risk scoring backed by an **evidence ladder** — every claim traceable to a source you can climb, not a black box. Output is clear **MONITOR / INVESTIGATE / ESCALATE** triage, so a decision-maker knows what it means and what to do next.
 
@@ -136,7 +147,7 @@ Suburb/community-level disaster-risk scoring backed by an **evidence ladder** �
 
 ---
 
-### 6. Recognition — Gold Coast Innovation Hub Open Data Challenge (disaster resilience)
+### 7. Recognition — Gold Coast Innovation Hub Open Data Challenge (disaster resilience)
 
 Built under the "Data Presents. Human Decides." philosophy. **Recognised at the Gold Coast Innovation Hub Open Data Challenge (disaster resilience); pitched live on stage.** To be fully honest: the hosts never publicly announced formal rankings, so I describe this as *recognised* — not "winner."
 
@@ -192,6 +203,7 @@ Test files: ~15 · coverage across auth, isolation, permissions, immutability, e
 ## The through-line: "Data Presents. Human Decides."
 
 - **TYDAL** — the assistant surfaces truth and options; the human owns the space and can revoke the assistant. Immutable stores mean the record can't quietly change.
+- **SelfHeal** — it grades blast radius first, auto-heals only the safe and reversible, and holds the risky stuff for a person. The AI proposes; a human keeps the decision.
 - **Credentials AI** — presents verified business profiles and tracked enquiries; a human founder decides the next move.
 - **RFQ OS** — flags what it doesn't know rather than guessing, and stops at the founder gate.
 - **AI Email** — never sends on its own; a human approves every send.
