@@ -2,7 +2,7 @@
 
 **Self-taught AI systems builder.** 20 years in precision trade — stainless fabrication and TIG welding — taught me that *quality is a system, not a feeling*. I inspect. I verify. I certify. I don't guess.
 
-In the last ~10 weeks, alongside a full-time job, I applied that same discipline to an entirely new domain: I **designed, built, and shipped** a multi-tenant AI platform from scratch, a separate commercial product with real payment processing, **and an open-source product (SelfHeal) that's live and installable on GitHub**. Real users. Real security. A real test suite (788/789 passing). **No CS degree — a builder who ships.**
+In the last ~10 weeks, alongside a full-time job, I applied that same discipline to an entirely new domain: I **designed, built, and shipped** a multi-tenant AI platform from scratch, a separate commercial product with real payment processing, **and a third shipped product (SelfHeal)**. Real users. Real security. A real test suite (788/789 passing). **No CS degree — a builder who ships.**
 
 > **The one idea that runs through everything I build:**
 > **"Data Presents. Human Decides."**
@@ -20,8 +20,6 @@ In the last ~10 weeks, alongside a full-time job, I applied that same discipline
 ### 🛡️ IP Protection Notice
 
 > **These projects contain novel ideas and implementation, so the source is kept private to protect that IP prior to any commercial licensing.** What you see in this repo is the *proof of engineering* — real running systems, production test suites, architecture and security decisions — so you can evaluate depth and competence without exposing the proprietary code itself or its business logic.
->
-> **One project is fully open-source** so you can verify for yourself: **[SelfHeal](https://github.com/ikebuilds-ai/selfheal-byok)** (system #2 below) is public, installable, and readable start-to-finish — proof of how I actually engineer, not just talk about it.
 
 ### 🛠️ How this repo proves engineering without showing source
 
@@ -52,16 +50,16 @@ Engineering-depth highlights: **multi-tenant isolation enforced across the whole
 
 ---
 
-### 2. SelfHeal — A Governed Self-Heal Harness for AI Agents *(public product, installable via git clone)*
+### 2. SelfHeal — A Governed Self-Heal Harness for AI Agents
 
-**A bring-your-own-key product that gives an AI agent safe, *governed* hands to keep its own stack alive.** Public and installable: **[github.com/ikebuilds-ai/selfheal-byok](https://github.com/ikebuilds-ai/selfheal-byok)** — `git clone` → `npm install` → 67 passing checks (mainline + LLM-provider + Telegram suites). This is the *same engine* we run on our own production every day, productised. It's the cleanest single answer to "show me how you engineer" — **the source is open for you to read.**
+**A bring-your-own-key product that gives an AI agent safe, *governed* hands to keep its own stack alive.** This is the *same engine* we run on our own production every day, productised — 67 passing checks (mainline + LLM-provider + Telegram suites).
 
 How it works: you choose the endpoints, it auto-derives each one's **blast radius**, grades it on a **DS autonomy ladder** (DS-A read-only → DS-B safe auto-heal → DS-C/D need a human → DS-E protected surface, *never* auto-touched), then either auto-heals the safe stuff or **holds the risky stuff and asks a person** on your chosen approval channel (stdout / Telegram / webhook). It brings its own model key (OpenAI / OpenRouter / any OpenAI-compatible like Ollama), sealed in an AES-256-GCM vault on your own box — no company fallback key. Every heal is logged as an exact `health.red → health.healed` audit trail with a rolling 24h counter.
 
-**Engineering-depth highlights:** real safety-by-default (a named database/queue engine in an endpoint — `postgres`, `mysql`, `kafka`, `redis`, ... — auto-forces DS-E, never auto-healed even if misconfigured) · blast radius **auto-derived**, not a manual dropdown · multi-provider BYOK via a single OpenAI-compatible transport · a read/write dashboard with onboarding explainers · reboot-survival supervisor on a health-checked cron · real Telegram holds tested against production. **Verified installable from a clean clone — zero VPS dependencies.**
+**Engineering-depth highlights:** real safety-by-default (a named database/queue engine in an endpoint — `postgres`, `mysql`, `kafka`, `redis`, ... — auto-forces DS-E, never auto-healed even if misconfigured) · blast radius **auto-derived**, not a manual dropdown · multi-provider BYOK via a single OpenAI-compatible transport · a read/write dashboard with onboarding explainers · reboot-survival supervisor on a health-checked cron · real Telegram holds tested against production.
 
 > **Engineered With:** Node.js · zero-dependency (vanilla Node) · AES-256-GCM sealed credential vault (byte-compatible with the canonical vault, never drifted) · OpenRouter / OpenAI / OpenAI-compatible providers · Telegram Bot API · colour-coded DS-ladder dashboard.
-> **Status (honest):** public + open-source; we dogfood it on our own live infra; no revenue yet (that's the current go-to-market).
+> **Status (honest):** private; we dogfood it on our own live infra; no revenue yet (that's the current go-to-market).
 
 ### 3. Credentials AI — Live Business-Trust Product, ABN-Verified *(commercial, monetised)*
 
