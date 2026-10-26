@@ -85,8 +85,7 @@ A live Australian business directory giving every business a **free, AI-readable
 | Free ABN check against live Australian Business Register data | [`credentialsai-6-free-abn-check.png`](portfolio-assets/credentialsai-6-free-abn-check.png) |
 | Passwordless login (scanner-safe) | [`credentialsai-1-magic-link-login.png`](portfolio-assets/credentialsai-1-magic-link-login.png) |
 | Auth handoff — protected dashboard entry | [`credentialsai-2-continue-dashboard.png`](portfolio-assets/credentialsai-2-continue-dashboard.png) |
-| Dashboard — lead view (top) | [`credentialsai-3-dashboard-top.png`](portfolio-assets/credentialsai-3-dashboard-top.png) |
-| Dashboard — lead view (bottom) | [`credentialsai-4-dashboard-bottom.png`](portfolio-assets/credentialsai-4-dashboard-bottom.png) |
+| Dashboard — edit your profile, Google stars and ABN status | [`credentialsai-3-dashboard-profile-edit.png`](portfolio-assets/credentialsai-3-dashboard-profile-edit.png) |
 
 **[Full case study →](case-studies/CREDENTIALS-AI.md)**
 
