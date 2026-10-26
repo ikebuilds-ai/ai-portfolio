@@ -61,23 +61,29 @@ How it works: you choose the endpoints, it auto-derives each one's **blast radiu
 > **Engineered With:** Node.js · zero-dependency (vanilla Node) · AES-256-GCM sealed credential vault (byte-compatible with the canonical vault, never drifted) · OpenRouter / OpenAI / OpenAI-compatible providers · Telegram Bot API · colour-coded DS-ladder dashboard.
 > **Status (honest):** private; we dogfood it on our own live infra; no revenue yet (that's the current go-to-market).
 
-### 3. Credentials AI — Live Business-Trust Product, ABN-Verified *(commercial, monetised)*
+### 3. Credentials AI — Live Business-Trust Directory, ABN-Verified *(live, free)*
 
-A revenue-oriented product, **live and selling**. Free AI Profile → verified lead engine → paid (Stripe). The trust layer is the heart: it verifies a business against **official data** and issues a **TrustBadge**.
+A live Australian business directory giving every business a **free, AI-readable profile verified against the Australian Business Register**. The trust layer is the heart: it verifies a business against **official data** and issues a **TrustBadge**.
 
-- **ABN verification against official records** — calls the **Australian Business Register (ABR) API** with a registered ABR web-services GUID, confirms the ABN is active and registered, and stores what was checked.
-- **TrustBadge with a live verification page** — a verified business displays a badge that opens onto a public page showing the source, status and timestamp. Independent verification, honestly framed (not a government body).
+- **ABN verification against official records** — calls the **Australian Business Register (ABR) API** with a registered ABR web-services GUID and derives real outcomes — verified, name mismatch, inactive/cancelled, not found — including the sole-trader case where the ABN sits under a legal name rather than the trading name.
+- **AI-readable Google stars** — one click finds the business's Google Business Profile and surfaces the real star rating and review count as **structured data AI can parse**. Free and read-only: it shows the stars they've already earned, never alters a rating.
+- **TrustBadge with a live verification page** — a verified business displays a badge that opens onto a public page showing the source, status and timestamp. Independent verification, honestly framed (not a government body). Checkable, not "trust us".
 - **AI-readable hosted profile** — structured so AI tools and search engines can read it (not just human eyeballs).
-- **QR kit + embeddable badge** — truck sticker / window / quote-tag; owners embed the proof on their own site.
-- **Profile theming** — hosted profile takes the business's branding (e.g. profile colour), not a generic template.
-- **Tracked enquiries** — tap-to-call / request-a-quote land as an exact count per profile.
+- **Free AI-readiness scan** — in seconds, no sign-up wall.
+- **Claim or build** — take over an existing listing, or create one from scratch in ~30 seconds.
+- **Tracked enquiries** — tap-to-call and quote requests land as an exact count per profile.
+- **Profile theming, QR kit, embeddable badge** — truck sticker / window / quote-tag; owners embed the proof on their own site.
 
-> **Engineered With:** Next.js · Supabase (PostgreSQL auth + data) · Stripe (payments) · Resend (auth/transactional email) · Australian Business Register (ABR) API for ABN verification.
+> **Honest status:** the product is **free** — no card, no subscription. The badge tiers ($149 / $499 / $999 yearly) are designed and the sales page is live, but **checkout is deliberately disabled** pending launch. The full Google Reviews Engine is built and parked; stars on the profile are free and read-only.
+
+> **Engineered With:** Next.js · Supabase (PostgreSQL, row-level security) · Australian Business Register (ABR) API · Google Places · Stripe (integrated, gated) · Resend (auth/transactional email) · 68 test files / 637 tests, `tsc` clean.
 
 | What | Capture |
 |---|---|
 | Home page — live at credentialsai.com.au | [`credentialsai-com-au-homepage.png`](portfolio-assets/credentialsai-com-au-homepage.png) |
-| Magic-link (scanner-safe) authentication | [`credentialsai-1-magic-link-login.png`](portfolio-assets/credentialsai-1-magic-link-login.png) |
+| AI-readable Google stars + one identity across six platforms | [`credentialsai-5-ai-readable-stars-identity.png`](portfolio-assets/credentialsai-5-ai-readable-stars-identity.png) |
+| Free ABN check against live Australian Business Register data | [`credentialsai-6-free-abn-check.png`](portfolio-assets/credentialsai-6-free-abn-check.png) |
+| Passwordless login (scanner-safe) | [`credentialsai-1-magic-link-login.png`](portfolio-assets/credentialsai-1-magic-link-login.png) |
 | Auth handoff — protected dashboard entry | [`credentialsai-2-continue-dashboard.png`](portfolio-assets/credentialsai-2-continue-dashboard.png) |
 | Dashboard — lead view (top) | [`credentialsai-3-dashboard-top.png`](portfolio-assets/credentialsai-3-dashboard-top.png) |
 | Dashboard — lead view (bottom) | [`credentialsai-4-dashboard-bottom.png`](portfolio-assets/credentialsai-4-dashboard-bottom.png) |
