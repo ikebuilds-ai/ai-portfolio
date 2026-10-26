@@ -80,12 +80,12 @@ A live Australian business directory giving every business a **free, AI-readable
 
 | What | Capture |
 |---|---|
-| Home page — live at credentialsai.com.au | [`credentialsai-com-au-homepage.png`](portfolio-assets/credentialsai-com-au-homepage.png) |
-| AI-readable Google stars + one identity across six platforms | [`credentialsai-5-ai-readable-stars-identity.png`](portfolio-assets/credentialsai-5-ai-readable-stars-identity.png) |
-| Free ABN check against live Australian Business Register data | [`credentialsai-6-free-abn-check.png`](portfolio-assets/credentialsai-6-free-abn-check.png) |
-| Passwordless login (scanner-safe) | [`credentialsai-1-magic-link-login.png`](portfolio-assets/credentialsai-1-magic-link-login.png) |
-| Auth handoff — protected dashboard entry | [`credentialsai-2-continue-dashboard.png`](portfolio-assets/credentialsai-2-continue-dashboard.png) |
-| Dashboard — edit your profile, Google stars and ABN status | [`credentialsai-3-dashboard-profile-edit.png`](portfolio-assets/credentialsai-3-dashboard-profile-edit.png) |
+| Home page — live at credentialsai.com.au | [`credentialsai-1-homepage.png`](portfolio-assets/credentialsai-1-homepage.png) |
+| AI-readable Google stars + one identity across six platforms | [`credentialsai-2-ai-readable-stars-identity.png`](portfolio-assets/credentialsai-2-ai-readable-stars-identity.png) |
+| Free ABN check against live Australian Business Register data | [`credentialsai-3-free-abn-check.png`](portfolio-assets/credentialsai-3-free-abn-check.png) |
+| Passwordless login (scanner-safe) | [`credentialsai-4-passwordless-login.png`](portfolio-assets/credentialsai-4-passwordless-login.png) |
+| Auth handoff — protected dashboard entry | [`credentialsai-5-auth-handoff.png`](portfolio-assets/credentialsai-5-auth-handoff.png) |
+| Dashboard — edit your profile, Google stars and ABN status | [`credentialsai-6-dashboard-profile-edit.png`](portfolio-assets/credentialsai-6-dashboard-profile-edit.png) |
 
 **[Full case study →](case-studies/CREDENTIALS-AI.md)**
 
